@@ -8,10 +8,4 @@
 
 <% end %>
 
-<% if params[:user_id] %>
-          <% user_photos(params[:user_id]).each do |photo| %>
-
-            <%= link_to(image_tag(FlickRaw.url_q(photo), :class => 'flickr_photo', :title => photo.title, :border => 0, :size => '75x75')) %>
-             
-          <% end %>
-<% end %>
+<%= render_flickr_sidebar_widget(@user_id) %>
